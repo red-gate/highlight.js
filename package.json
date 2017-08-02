@@ -1,36 +1,45 @@
 {
-  "name": "highlight.js",
-  "description": "Syntax highlighting with language autodetection.",
+  "name": "highlight.js-tsql",
+  "description": "Syntax highlighting for T-SQL.",
   "keywords": [
     "highlight",
-    "syntax"
+    "syntax",
+    "T-SQL",
+    "sql"
   ],
-  "homepage": "https://highlightjs.org/",
-  "version": "9.12.0",
+  "version": "1.0.3",
   "author": {
     "name": "Ivan Sagalaev",
     "email": "maniac@softwaremaniacs.org"
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/isagalaev/highlight.js/issues"
+    "url": "https://github.com/red-gate/highlight.js/issues"
   },
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/isagalaev/highlight.js.git"
+    "url": "git://github.com/red-gate/highlight.js.git"
   },
   "main": "./lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/",
-    "test-browser": "./node_modules/.bin/mocha test/browser/"
+    "test-browser": "./node_modules/.bin/mocha test/browser/",
+    "build": "node tools/build.js tsql",
+    "postbuild": "cpy ./build/highlight.pack.js ./dist/ --rename=highlight.min.js && cpy ./build/demo/styles/ssms.css ./dist/ --rename=ssms.min.css",
+    "prepare": "npm run build"
   },
+  "files": [
+    "dist/highlight.min.js",
+    "dist/ssms.min.css"
+  ],
   "engines": {
     "node": "*"
   },
   "devDependencies": {
     "bluebird": "^3.0.1",
     "commander": "^2.3.0",
+    "cpy-cli": "^1.0.1",
     "del": "^2.0.2",
     "gear": "^0.9.4",
     "gear-lib": "^0.9.2",
