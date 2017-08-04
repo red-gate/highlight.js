@@ -1,6 +1,7 @@
-# Highlight.js
+# Highlight.js - fork with T-SQL highlighting
 
-[![Build Status](https://travis-ci.org/highlightjs/highlight.js.svg?branch=master)](https://travis-ci.org/highlightjs/highlight.js)
+This is a fork of the [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev), that contains only a ready-to-use T-SQL syntax highlighting.
+
 
 Highlight.js is a syntax highlighter written in JavaScript. It works in
 the browser as well as on the server. It works with pretty much any
@@ -132,6 +133,9 @@ example:
 r.js -o name=hljs paths.hljs=/path/to/highlight out=highlight.js
 ```
 
+## Sample usage
+We used this library for [readyroll vsts extension](https://github.com/red-gate/readyroll-vsts-extension).
+In [this PR](https://github.com/red-gate/readyroll-vsts-extension/pull/16) we added highlighting using the original highlight.js library from CDN. It didn't contain the support for T-SQL, so we forked the original repo into this one and added T-SQL highlighting ourselves. We then created a [npm package](https://www.npmjs.com/package/highlight.js-tsql) and used it in [this PR](https://github.com/red-gate/readyroll-vsts-extension/pull/20).
 
 ### CommonJS
 
