@@ -8,10 +8,10 @@
     "sql"
   ],
   "homepage": "https://github.com/red-gate/highlight.js/",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
-    "name": "Ivan Sagalaev",
-    "email": "maniac@softwaremaniacs.org"
+    "name": "Redgate Software",
+    "email": "support@red-gate.com"
   },
   "contributors": [],
   "bugs": {
